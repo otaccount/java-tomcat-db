@@ -7,13 +7,9 @@
 <jsp:include page="/web/common/header.jsp" />
 
 <body>
-	<ul>
-		<li><a href="web">web</a></li>
-		<li><a href="web/test">web/test</a></li>
-		<li><a href="web/file">web/file</a></li>
-	</ul>
+	<button onclick="history.back();">戻る</button><br />
+	完了
 </body>
 
 <jsp:include page="/web/common/footer.jsp" />
-
 </jsp:root>

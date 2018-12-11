@@ -3,7 +3,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+    classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
   }
 }
 apply plugin: 'war'
@@ -16,18 +16,23 @@ repositories {
 
 dependencies {
 	compileOnly "org.projectlombok:lombok:1.16.4"
+	compile files('libs/java-utils.jar')
+
 	
     providedCompile 'javax:javaee-web-api:6.0'
     compile 'org.slf4j:slf4j-api:1.7.12'
     testCompile 'junit:junit:4.12'
 
-    def tomcatVersion = '7.0.59'
+
+    def tomcatVersion = '8.5.16'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
-           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.2",
            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 }
 
 tomcat {
-    httpPort = 18080
+	httpPort = 18080
+	httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
+    ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
 }
 

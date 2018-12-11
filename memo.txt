@@ -3,3 +3,8 @@ http://akiyoshi220.blogspot.com/2015/08/gradletomcat.html
 
 
 https://github.com/bmuschko/gradle-tomcat-plugin
+
+
+jsp:include
+フラグメント問題
+プロパティ→検証→JSP

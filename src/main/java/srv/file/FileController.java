@@ -1,4 +1,4 @@
-package srv;
+package srv.file;
 
 import java.io.IOException;
 
@@ -10,17 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import lombok.val;
 
+import static ot.utils.Basic.*;
+
 /**
- * Servlet implementation class TestSrv
+ * Servlet implementation class FileOperate
  */
-@WebServlet("/TestSrv")
-public class TestSrv extends HttpServlet {
+@WebServlet("/web/file/FileController")
+public class FileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TestSrv() {
+    public FileController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,11 +31,16 @@ public class TestSrv extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		val sample = "testMsg";
-		System.out.println(sample);
-		request.getContextPath();
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		out("start");
+		
+		out("end");
+		
+		// 画面遷移
+		String path = "entry.jsp";
+		val dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	/**

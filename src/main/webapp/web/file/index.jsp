@@ -7,13 +7,12 @@
 <jsp:include page="/web/common/header.jsp" />
 
 <body>
-	<ul>
-		<li><a href="web">web</a></li>
-		<li><a href="web/test">web/test</a></li>
-		<li><a href="web/file">web/file</a></li>
-	</ul>
+	<form action="FileController">
+		<input type="text" name="name" /><br />
+		<input type="file" size="100" /><br />
+		<input type="submit" value="送信" />
+	</form>
 </body>
 
 <jsp:include page="/web/common/footer.jsp" />
-
 </jsp:root>
