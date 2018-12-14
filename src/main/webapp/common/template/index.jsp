@@ -4,10 +4,10 @@ index.jspindex.jsp<?xml version="1.0" encoding="UTF-8" ?>
 	version="2.0">
 <jsp:directive.page language="java" contentType="text/html; charset=UTF-8" />
 
-<jsp:include page="/web/common/header.jsp" />
+<jsp:include page="/common/jsp/header.jsp" />
 
 <body>
 </body>
 
-<jsp:include page="/web/common/footer.jsp" />
+<jsp:include page="/common/jsp/footer.jsp" />
 </jsp:root>
